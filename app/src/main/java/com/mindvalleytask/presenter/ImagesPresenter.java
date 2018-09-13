@@ -16,8 +16,6 @@ public class ImagesPresenter implements IImagePresenter {
 
   @Override public void getAllImages() {
     iImageView.showLoadingIndicator();
-    GetImagesUseCase getImagesUseCase =
-        new GetImagesUseCase();
     getImagesUseCase.getAllImages()
         .observeOn(AndroidSchedulers.mainThread())
         .subscribeOn(Schedulers.io())
