@@ -1,0 +1,6 @@
+<resources>
+  <string name="app_name">MindValleyTask</string>
+  <string name="no_internet_error">NO Internet Connection Please Check Your Connection And Try Again
+    Later
+  </string>
+</resources>
