@@ -10,8 +10,6 @@ import android.widget.ImageView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.mindvalleytask.R;
-import com.squareup.picasso.Callback;
-import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,16 +35,7 @@ public class ImageRecAdapter extends RecyclerView.Adapter<ImageRecAdapter.DataVi
   public void onBindViewHolder(@NonNull DataViewHolder holder, int position) {
     Picasso.with(context)
         .load(imagesURL.get(position))
-        .networkPolicy(NetworkPolicy.OFFLINE)
-        .into(holder.imageView, new Callback() {
-          @Override public void onSuccess() {
-
-          }
-
-          @Override public void onError() {
-            Picasso.with(context).load(imagesURL.get(position)).into(holder.imageView);
-          }
-        });
+        .into(holder.imageView);
   }
 
   public void setImagesURL(List<String> imageList) {
